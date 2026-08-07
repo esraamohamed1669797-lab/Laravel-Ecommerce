@@ -3,7 +3,11 @@
 <style>
   .btn{
     white-space: nowrap;
+     min-width: 130px;
   }
+   .remove-cart svg{
+    transform: translate(20px, 0px);
+}
   @media (max-width: 768px) {
   .remove-cart svg{
     transform: translate(13px, -15px);
@@ -23,7 +27,7 @@
                 <th></th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Action</th>
+                <th style="position: relative; right: -20px;">Action</th>
                 <th></th>
               </tr>
             </thead>
@@ -45,9 +49,9 @@
                   </div>
                 </td>
                 <td>
-                  <span class="shopping-cart__product-price">${{$item->price}}</span>
+                  <span class="shopping-cart__product-price">EGP {{ number_format($item->price, 0) }}</span>
                 </td>
-                <td>
+                <td style="position: relative; right: -20px;">
                   {{$item->qty}}
                 </td>
                 <td>
